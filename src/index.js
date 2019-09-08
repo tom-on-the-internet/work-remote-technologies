@@ -3,6 +3,30 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import technologyData from "./data.json";
 
+function getClassFromPercentage(percentage) {
+  if (percentage >= 50) {
+    return "ubiquitous";
+  }
+
+  if (percentage >= 30) {
+    return "very-popular";
+  }
+
+  if (percentage >= 20) {
+    return "popular";
+  }
+
+  if (percentage >= 10) {
+    return "fairly-popular";
+  }
+
+  if (percentage >= 5) {
+    return "mildly-popular";
+  }
+
+  return "unpopular";
+}
+
 function convertDataToLocations(data) {
   return data
     .reduce((acc, cur) => {
@@ -68,7 +92,7 @@ function TechnologyDisplay(props) {
     <div>
       <ul>
         {props.technologies.map(technology => (
-          <li key={technology.name}>
+          <li className={getClassFromPercentage(technology.percentage)} key={technology.name}>
             {technology.name} ({technology.percentage}%)
           </li>
         ))}

@@ -1,10 +1,34 @@
-* {
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: monospace;
+  font-size: 16px;
+  background-color: #112222;
+  color: #eeeeee;
 }
 
 .container {
   display: flex;
+  justify-content: space-around;
+}
+
+.ubiquitous {
+  font-size: 2em;
+}
+
+.very-popular {
+  font-size: 1.75em;
+}
+
+.popular {
+  font-size: 1.5em;
+}
+
+.fairly-popular {
+  font-size: 1.25em;
+}
+
+.mildly-popular {
+  font-size: 1em;
 }
