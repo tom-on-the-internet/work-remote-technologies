@@ -11,6 +11,15 @@ html {
 .container {
   display: flex;
   justify-content: space-around;
+  user-select: none;
+}
+
+.highlighted-technology .name {
+  font-size: 2em;
+}
+
+.highlighted-technology .description {
+  font-size: 1.2em;
 }
 
 .ubiquitous {
@@ -31,4 +40,12 @@ html {
 
 .mildly-popular {
   font-size: 1em;
+}
+
+.highlighted {
+  color: #fe019a;
+}
+
+.clickable {
+  cursor: default;
 }

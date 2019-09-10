@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import technologyData from "./data.json";
+import technologyThoughts from "./technology-thoughts";
 
 function getClassFromPercentage(percentage) {
   if (percentage >= 50) {
@@ -92,7 +93,15 @@ function TechnologyDisplay(props) {
     <div>
       <ul>
         {props.technologies.map(technology => (
-          <li className={getClassFromPercentage(technology.percentage)} key={technology.name}>
+          <li
+            className={`${getClassFromPercentage(technology.percentage)} ${
+              technology.name === props.highlightedTechnology
+                ? "highlighted"
+                : ""
+            } clickable`}
+            onClick={() => props.onClick(technology.name)}
+            key={technology.name}
+          >
             {technology.name} ({technology.percentage}%)
           </li>
         ))}
@@ -121,11 +130,24 @@ function LocationDisplay(props) {
     </div>
   );
 }
+
+function HighlightedTechnology(props) {
+  return (
+    <div className="highlighted-technology">
+      <div className="name">{props.technologyName}</div>
+      <div className="description">
+        {props.technologyDescription ||
+          "This technology is apparently of so little interest to me that I chose not to write an entry."}
+      </div>
+    </div>
+  );
+}
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locations: convertDataToLocations(technologyData)
+      locations: convertDataToLocations(technologyData),
+      highlightedTechnology: "JavaScript"
     };
   }
 
@@ -137,6 +159,10 @@ class App extends React.Component {
     locationToUpdate.on = !locationToUpdate.on;
 
     this.setState({ locations });
+  }
+
+  onClickTechnology(technologyName) {
+    this.setState({ highlightedTechnology: technologyName });
   }
 
   onToggleAll() {
@@ -168,8 +194,18 @@ class App extends React.Component {
               onChange={this.onClickCheckbox.bind(this)}
             />
           </div>
-          <TechnologyDisplay technologies={technologies} />
+          <TechnologyDisplay
+            technologies={technologies}
+            highlightedTechnology={this.state.highlightedTechnology}
+            onClick={this.onClickTechnology.bind(this)}
+          />
         </div>
+        <HighlightedTechnology
+          technologyName={this.state.highlightedTechnology}
+          technologyDescription={
+            technologyThoughts[this.state.highlightedTechnology]
+          }
+        />
       </div>
     );
   }
