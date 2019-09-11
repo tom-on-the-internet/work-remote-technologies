@@ -5,7 +5,7 @@ html {
   font-family: monospace;
   font-size: 16px;
   background-color: #112222;
-  color: #eeeeee;
+  color: #ffeeee;
 }
 
 .container {
@@ -48,4 +48,9 @@ html {
 
 .clickable {
   cursor: default;
+}
+
+a,
+a:visited {
+  color: #fe019a;
 }

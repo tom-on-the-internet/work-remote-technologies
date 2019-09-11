@@ -206,6 +206,10 @@ class App extends React.Component {
             technologyThoughts[this.state.highlightedTechnology]
           }
         />
+        <div>
+          <br />
+          <a href="https://tomontheinternet.com">tomontheinternet.com</a>
+        </div>
       </div>
     );
   }
