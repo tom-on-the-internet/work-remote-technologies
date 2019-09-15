@@ -90,22 +90,20 @@ function convertDataToTechnologies(data, locations) {
 
 function TechnologyDisplay(props) {
   return (
-    <div>
-      <ul>
-        {props.technologies.map(technology => (
-          <li
-            className={`${getClassFromPercentage(technology.percentage)} ${
-              technology.name === props.highlightedTechnology
-                ? "highlighted"
-                : ""
-            } clickable`}
-            onClick={() => props.onClick(technology.name)}
-            key={technology.name}
-          >
-            {technology.name} ({technology.percentage}%)
-          </li>
-        ))}
-      </ul>
+    <div class="technology-display">
+      {props.technologies.map(technology => (
+        <div
+          className={`technology-display-item ${getClassFromPercentage(
+            technology.percentage
+          )} ${
+            technology.name === props.highlightedTechnology ? "highlighted" : ""
+          } clickable`}
+          onClick={() => props.onClick(technology.name)}
+          key={technology.name}
+        >
+          {technology.name} ({technology.percentage}%)
+        </div>
+      ))}
     </div>
   );
 }
@@ -136,8 +134,15 @@ function HighlightedTechnology(props) {
     <div className="highlighted-technology">
       <div className="name">{props.technologyName}</div>
       <div className="description">
-        {props.technologyDescription ||
-          "This technology is apparently of so little interest to me that I chose not to write an entry."}
+        {props.technologyDescription || (
+          <div>
+            No description for this technology.
+            {` `}
+            <a href=" https://github.com/tom-on-the-internet/work-remote-technologies/blob/master/src/technology-thoughts.js">
+              Make one!
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -186,7 +191,7 @@ class App extends React.Component {
       <div>
         <h1>Technologies from We Work Remotely</h1>
         <h3>Last updated August 31, 2019</h3>
-        <div className="container">
+        <div>
           <div>
             <button onClick={this.onToggleAll.bind(this)}>Toggle all</button>
             <LocationDisplay

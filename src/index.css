@@ -3,15 +3,21 @@ html {
   padding: 0;
   box-sizing: border-box;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 20px;
   background-color: #112222;
   color: #ffeeee;
 }
 
-.container {
+.technology-display {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: left;
   user-select: none;
+}
+
+.technology-display-item {
+  border: solid 1px #fe019a;
+  margin: 0px 5px 5px 0px;
 }
 
 .highlighted-technology .name {
@@ -23,26 +29,22 @@ html {
 }
 
 .ubiquitous {
-  font-size: 2em;
 }
 
 .very-popular {
-  font-size: 1.75em;
 }
 
 .popular {
-  font-size: 1.5em;
 }
 
 .fairly-popular {
-  font-size: 1.25em;
 }
 
 .mildly-popular {
-  font-size: 1em;
 }
 
 .highlighted {
+  width: 100vw;
   color: #fe019a;
 }
 
