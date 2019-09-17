@@ -16,8 +16,18 @@ html {
 }
 
 .technology-display-item {
-  border: solid 1px #fe019a;
-  margin: 0px 5px 5px 0px;
+  border: solid 1px white;
+  border-radius: 5px;
+  margin: 0px 10px 10px 0px;
+  padding: 5px;
+  /* box-shadow: #fe019a73 5px 5px 3px; */
+  transition: all 0.2s;
+}
+
+.technology-display-item:hover {
+  border-color: #fe019a;
+  box-shadow: #fe019a73 5px 5px 3px;
+  transform: translate(-3px, -3px);
 }
 
 .highlighted-technology .name {
@@ -46,6 +56,8 @@ html {
 .highlighted {
   width: 100vw;
   color: #fe019a;
+  font-size: 2em;
+  border-width: 3px;
 }
 
 .clickable {
