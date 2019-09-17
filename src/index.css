@@ -30,12 +30,10 @@ html {
   transform: translate(-3px, -3px);
 }
 
-.highlighted-technology .name {
-  font-size: 2em;
-}
-
 .highlighted-technology .description {
-  font-size: 1.2em;
+  border-top: solid 1px white;
+  padding: 5px;
+  font-size: 0.4em;
 }
 
 .ubiquitous {
@@ -55,9 +53,7 @@ html {
 
 .highlighted {
   width: 100vw;
-  color: #fe019a;
   font-size: 2em;
-  border-width: 3px;
 }
 
 .clickable {

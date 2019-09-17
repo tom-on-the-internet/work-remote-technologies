@@ -102,6 +102,14 @@ function TechnologyDisplay(props) {
           key={technology.name}
         >
           {technology.name} ({technology.percentage}%)
+          {technology.name === props.highlightedTechnology && (
+            <HighlightedTechnology
+              technologyName={props.highlightedTechnology}
+              technologyDescription={
+                technologyThoughts[props.highlightedTechnology]
+              }
+            />
+          )}
         </div>
       ))}
     </div>
@@ -132,7 +140,6 @@ function LocationDisplay(props) {
 function HighlightedTechnology(props) {
   return (
     <div className="highlighted-technology">
-      <div className="name">{props.technologyName}</div>
       <div className="description">
         {props.technologyDescription || (
           <div>
@@ -205,12 +212,6 @@ class App extends React.Component {
             onClick={this.onClickTechnology.bind(this)}
           />
         </div>
-        <HighlightedTechnology
-          technologyName={this.state.highlightedTechnology}
-          technologyDescription={
-            technologyThoughts[this.state.highlightedTechnology]
-          }
-        />
         <div>
           <br />
           <a href="https://tomontheinternet.com">tomontheinternet.com</a>
