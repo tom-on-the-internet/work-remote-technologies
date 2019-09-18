@@ -8,6 +8,10 @@ html {
   color: #ffeeee;
 }
 
+button {
+  all: inherit;
+}
+
 .technology-display {
   display: flex;
   flex-wrap: wrap;
@@ -18,49 +22,35 @@ html {
 .technology-display-item {
   border: solid 1px white;
   border-radius: 5px;
-  margin: 0px 10px 10px 0px;
-  padding: 5px;
-  /* box-shadow: #fe019a73 5px 5px 3px; */
+  margin: 0px 20px 20px 0px;
+  padding: 15px;
   transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.technology-display-item:hover {
-  border-color: #fe019a;
-  box-shadow: #fe019a73 5px 5px 3px;
-  transform: translate(-3px, -3px);
+.technology-display-item:hover,
+.highlighted {
+  border-color: #0c0;
+  box-shadow: #00cc0073 5px 5px;
+  transform: translate(-5px, -5px);
 }
 
 .highlighted-technology .description {
+  padding-top: 15px;
   border-top: solid 1px white;
-  padding: 5px;
   font-size: 0.4em;
-}
-
-.ubiquitous {
-}
-
-.very-popular {
-}
-
-.popular {
-}
-
-.fairly-popular {
-}
-
-.mildly-popular {
 }
 
 .highlighted {
   width: 100vw;
+  max-width: 500px;
   font-size: 2em;
-}
-
-.clickable {
-  cursor: default;
 }
 
 a,
 a:visited {
-  color: #fe019a;
+  color: #0c0;
 }

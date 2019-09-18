@@ -4,30 +4,6 @@ import "./index.css";
 import technologyData from "./data.json";
 import technologyThoughts from "./technology-thoughts";
 
-function getClassFromPercentage(percentage) {
-  if (percentage >= 50) {
-    return "ubiquitous";
-  }
-
-  if (percentage >= 30) {
-    return "very-popular";
-  }
-
-  if (percentage >= 20) {
-    return "popular";
-  }
-
-  if (percentage >= 10) {
-    return "fairly-popular";
-  }
-
-  if (percentage >= 5) {
-    return "mildly-popular";
-  }
-
-  return "unpopular";
-}
-
 function convertDataToLocations(data) {
   return data
     .reduce((acc, cur) => {
@@ -92,12 +68,10 @@ function TechnologyDisplay(props) {
   return (
     <div class="technology-display">
       {props.technologies.map(technology => (
-        <div
-          className={`technology-display-item ${getClassFromPercentage(
-            technology.percentage
-          )} ${
+        <button
+          className={`technology-display-item ${
             technology.name === props.highlightedTechnology ? "highlighted" : ""
-          } clickable`}
+          }`}
           onClick={() => props.onClick(technology.name)}
           key={technology.name}
         >
@@ -110,7 +84,7 @@ function TechnologyDisplay(props) {
               }
             />
           )}
-        </div>
+        </button>
       ))}
     </div>
   );
