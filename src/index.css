@@ -29,6 +29,7 @@ button {
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  opacity: 0.7;
 }
 
 .technology-display-item:hover,
@@ -36,6 +37,7 @@ button {
   border-color: #0c0;
   box-shadow: #00cc0073 5px 5px;
   transform: translate(-5px, -5px);
+  opacity: 1;
 }
 
 .highlighted-technology .description {
