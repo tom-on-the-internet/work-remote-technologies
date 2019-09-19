@@ -56,7 +56,7 @@ function convertDataToTechnologies(data, locations) {
     }, [])
     .map(technology => {
       technology.percentage = Number(
-        ((technology.count / activeData.length) * 100).toFixed(2)
+        ((technology.count / activeData.length) * 100).toFixed(0)
       );
 
       return technology;
