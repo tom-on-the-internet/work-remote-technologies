@@ -83,6 +83,7 @@ input {
 }
 
 .about-page article {
+  background-color: #00cc0020;
   max-width: 800px;
   border: var(--terminal-green) 1px solid;
 }
