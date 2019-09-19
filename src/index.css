@@ -1,3 +1,7 @@
+:root {
+  --terminal-green: #0c0;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -34,7 +38,7 @@ button {
 
 .technology-display-item:hover,
 .highlighted {
-  border-color: #0c0;
+  border-color: var(--terminal-green);
   box-shadow: #00cc0073 3px 5px;
   transform: translate(-3px, -5px);
   opacity: 1;
@@ -53,5 +57,5 @@ button {
 
 a,
 a:visited {
-  color: #0c0;
+  color: var(--terminal-green);
 }
