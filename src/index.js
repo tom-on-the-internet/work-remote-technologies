@@ -66,7 +66,7 @@ function convertDataToTechnologies(data, locations) {
 
 function TechnologyDisplay(props) {
   return (
-    <div class="technology-display">
+    <div className="technology-display">
       {props.technologies.map(technology => (
         <button
           className={`technology-display-item ${
@@ -92,7 +92,7 @@ function TechnologyDisplay(props) {
 
 function LocationDisplay(props) {
   return (
-    <div class="location-display">
+    <div className="location-display">
       <ul>
         {props.locations.map(location => (
           <li key={location.name}>
@@ -128,12 +128,38 @@ function HighlightedTechnology(props) {
     </div>
   );
 }
+
+function AboutPage(props) {
+  return (
+    <div className="about-page">
+      <article>
+        <h1>About</h1>
+        <button onClick={props.onClose}>close</button>
+        <p>
+          This page shows the most popular technologies from the{" "}
+          <strong>programming</strong> category of{" "}
+          <a href="https://weworkremotely.com">We Work Remotely</a>.
+        </p>
+        <p>
+          The % next to a location is the percentage of jobs that are in that
+          location.
+        </p>
+        <p>
+          The % next to a technology is the percentage of jobs that list that
+          technology somewhere in the post.
+        </p>
+      </article>
+    </div>
+  );
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       locations: convertDataToLocations(technologyData),
-      highlightedTechnology: "JavaScript"
+      highlightedTechnology: "JavaScript",
+      showAboutPage: true
     };
   }
 
@@ -151,14 +177,21 @@ class App extends React.Component {
     this.setState({ highlightedTechnology: technologyName });
   }
 
+  onCloseAboutPage() {
+    this.setState({ showAboutPage: false });
+  }
+
   render() {
     const technologies = convertDataToTechnologies(
       technologyData,
       this.state.locations
     );
-    return (
-      <div>
-        <h1>Technologies from We Work Remotely</h1>
+
+    const techStuff = (
+      <React.Fragment>
+        <button onClick={() => this.setState({ showAboutPage: true })}>
+          What is this?
+        </button>
         <LocationDisplay
           locations={this.state.locations}
           onChange={this.onClickCheckbox.bind(this)}
@@ -168,6 +201,17 @@ class App extends React.Component {
           highlightedTechnology={this.state.highlightedTechnology}
           onClick={this.onClickTechnology.bind(this)}
         />
+      </React.Fragment>
+    );
+    return (
+      <div>
+        <h1>Technologies from We Work Remotely</h1>
+        {this.state.showAboutPage ? (
+          <AboutPage onClose={this.onCloseAboutPage.bind(this)} />
+        ) : (
+          techStuff
+        )}
+
         <footer>
           <div>Last updated August 31, 2019</div>
           <a href="https://tomontheinternet.com">tomontheinternet.com</a>
