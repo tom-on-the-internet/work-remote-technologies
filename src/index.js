@@ -21,7 +21,7 @@ function convertDataToLocations(data) {
     }, [])
     .map(location => {
       location.percentage = Number(
-        ((location.count / data.length) * 100).toFixed(2)
+        ((location.count / data.length) * 100).toFixed(0)
       );
 
       return location;
@@ -92,17 +92,17 @@ function TechnologyDisplay(props) {
 
 function LocationDisplay(props) {
   return (
-    <div>
+    <div class="location-display">
       <ul>
         {props.locations.map(location => (
           <li key={location.name}>
             <label>
-              {location.name} ({location.percentage}%)
               <input
                 onChange={() => props.onChange(location.name)}
                 type="checkbox"
                 checked={location.on}
               />
+              {location.name} ({location.percentage}%)
             </label>
           </li>
         ))}
@@ -151,18 +151,6 @@ class App extends React.Component {
     this.setState({ highlightedTechnology: technologyName });
   }
 
-  onToggleAll() {
-    const locations = [...this.state.locations];
-
-    if (locations.find(({ on }) => on === false)) {
-      locations.forEach(location => (location.on = true));
-    } else {
-      locations.forEach(location => (location.on = false));
-    }
-
-    this.setState({ locations });
-  }
-
   render() {
     const technologies = convertDataToTechnologies(
       technologyData,
@@ -171,25 +159,19 @@ class App extends React.Component {
     return (
       <div>
         <h1>Technologies from We Work Remotely</h1>
-        <h3>Last updated August 31, 2019</h3>
-        <div>
-          <div>
-            <button onClick={this.onToggleAll.bind(this)}>Toggle all</button>
-            <LocationDisplay
-              locations={this.state.locations}
-              onChange={this.onClickCheckbox.bind(this)}
-            />
-          </div>
-          <TechnologyDisplay
-            technologies={technologies}
-            highlightedTechnology={this.state.highlightedTechnology}
-            onClick={this.onClickTechnology.bind(this)}
-          />
-        </div>
-        <div>
-          <br />
+        <LocationDisplay
+          locations={this.state.locations}
+          onChange={this.onClickCheckbox.bind(this)}
+        />
+        <TechnologyDisplay
+          technologies={technologies}
+          highlightedTechnology={this.state.highlightedTechnology}
+          onClick={this.onClickTechnology.bind(this)}
+        />
+        <footer>
+          <div>Last updated August 31, 2019</div>
           <a href="https://tomontheinternet.com">tomontheinternet.com</a>
-        </div>
+        </footer>
       </div>
     );
   }

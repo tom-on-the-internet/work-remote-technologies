@@ -9,11 +9,24 @@ html {
   font-family: monospace;
   font-size: 20px;
   background-color: #112222;
-  color: #ffeeee;
+  color: #eeffee;
 }
 
 button {
   all: inherit;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+input {
+  margin-right: 10px;
+}
+
+.location-display {
+  margin-bottom: 30px;
 }
 
 .technology-display {
@@ -44,15 +57,15 @@ button {
   opacity: 1;
 }
 
-.highlighted-technology .description {
-  padding-top: 5px;
-  font-size: 0.4em;
-}
-
 .highlighted {
   width: 100vw;
   max-width: 500px;
   font-size: 2em;
+}
+
+.description {
+  padding-top: 5px;
+  font-size: 0.4em;
 }
 
 a,
