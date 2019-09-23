@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
 
 export default props => {
   return (
     <div className="about-page">
       <article>
-        <h1>About</h1>
+        <h1>
+          About - Still a work in progress. If you stumbled upon this, please
+          now it'll be updated soon
+        </h1>
         <button onClick={props.onClose}>close</button>
         <p>
           This page shows the most popular technologies from the{" "}
