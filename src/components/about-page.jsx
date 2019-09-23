@@ -6,7 +6,7 @@ export default props => {
       <article>
         <h1>
           About - Still a work in progress. If you stumbled upon this, please
-          now it'll be updated soon
+          know it'll be updated soon... 
         </h1>
         <button onClick={props.onClose}>close</button>
         <p>
