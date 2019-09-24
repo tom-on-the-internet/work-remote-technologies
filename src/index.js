@@ -1,15 +1,15 @@
-import './index.css';
+import "./index.css";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import AboutPage from './components/about-page';
-import Footer from './components/footer';
-import LocationDisplay from './components/location-display';
-import TechnologyDisplay from './components/technology-display';
-import technologyData from './data.json';
-import convertDataToLocations from './utilities/convert-data-to-locations';
-import convertDataToTechnologies from './utilities/convert-data-to-technologies';
+import AboutPage from "./components/about-page";
+import Footer from "./components/footer";
+import LocationDisplay from "./components/location-display";
+import TechnologyDisplay from "./components/technology-display";
+import technologyData from "./data.json";
+import convertDataToLocations from "./utilities/convert-data-to-locations";
+import convertDataToTechnologies from "./utilities/convert-data-to-technologies";
 
 class App extends React.Component {
   constructor(props) {
@@ -48,8 +48,11 @@ class App extends React.Component {
     const techStuff = (
       <React.Fragment>
         <h1>Technologies from We Work Remotely</h1>
-        <button onClick={() => this.setState({ showAboutPage: true })}>
-          What is this?
+        <button
+          className="navigation-button"
+          onClick={() => this.setState({ showAboutPage: true })}
+        >
+          About This Page
         </button>
         <LocationDisplay
           locations={this.state.locations}

@@ -4,24 +4,25 @@ export default props => {
   return (
     <div className="about-page">
       <article>
-        <h1>
-          About - Still a work in progress. If you stumbled upon this, please
-          know it'll be updated soon... 
-        </h1>
-        <button onClick={props.onClose}>close</button>
+        <h1>About (WIP)</h1>
+        {/* Brief */}
         <p>
           This page shows the most popular technologies from the{" "}
           <strong>programming</strong> category of{" "}
           <a href="https://weworkremotely.com">We Work Remotely</a>.
         </p>
+
         <p>
-          The % next to a location is the percentage of jobs that are in that
-          location.
+          <strong>North America (40%)</strong> means that 40% percent of jobs
+          are listed for that location.
         </p>
         <p>
-          The % next to a technology is the percentage of jobs that list that
+          <strong>JavaScript (50%)</strong> means that 50% of postings list that
           technology somewhere in the post.
         </p>
+        <button className="navigation-button" onClick={props.onClose}>
+          go back
+        </button>
       </article>
     </div>
   );
