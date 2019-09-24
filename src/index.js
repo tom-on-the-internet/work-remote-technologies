@@ -17,7 +17,7 @@ class App extends React.Component {
     this.state = {
       locations: convertDataToLocations(technologyData),
       highlightedTechnology: "JavaScript",
-      showAboutPage: false
+      showAboutPage: true
     };
   }
 
