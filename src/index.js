@@ -7,7 +7,7 @@ import AboutPage from "./components/about-page";
 import Footer from "./components/footer";
 import LocationDisplay from "./components/location-display";
 import TechnologyDisplay from "./components/technology-display";
-import technologyData from "./data.json";
+import technologyData from "./technologies.json";
 import convertDataToLocations from "./utilities/convert-data-to-locations";
 import convertDataToTechnologies from "./utilities/convert-data-to-technologies";
 
