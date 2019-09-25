@@ -25,11 +25,11 @@ button {
   all: inherit;
 }
 
-ul {
+.location-display li {
   padding: 0px;
 }
 
-li {
+.location-display li {
   display: inline-block;
   margin-right: 20px;
 }

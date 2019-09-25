@@ -66,15 +66,31 @@ export default props => {
           It's good for me to see that React and Ruby are still in demand,
           because I want to get better at them. It's also good for me to see
           that Elixir is not popular, because that stops me from spending too
-          much time playing around with it.
+          much time playing around with it when I could be improving my React
+          and Ruby skills.
+        </p>
+        <p>
+          Of course, if I really loved a technology and it wasn't popular, I'd
+          probably still learn it and hope that I could find work using it.
         </p>
 
         <h2>Thoughts</h2>
-        <p>We Work Remotely is North America centric and web centric.</p>
-        <p>Ruby on Rails is not dead.</p>
-        <p>I thought Laravel would be more popular.</p>
-        <p>I expected TypeScript to be more popular than Rust.</p>
-        <p>JavaScript is huge!</p>
+        <ul>
+          <li>We Work Remotely is North America centric and web centric.</li>
+          <li>
+            Ruby on Rails is not dead. With Rails 6, it's a really good back end
+            choice.
+          </li>
+          <li>
+            I thought Laravel would be more popular. It's loved by PHP users,
+            but not very popular on We Work Remotely.
+          </li>
+          <li>
+            I expected TypeScript to be more popular. It's changed the way I
+            write front-end code.
+          </li>
+          <li>JavaScript is huge!</li>
+        </ul>
         <button className="navigation-button" onClick={props.onClose}>
           go back
         </button>
