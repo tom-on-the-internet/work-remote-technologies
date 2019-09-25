@@ -68,6 +68,13 @@ export default props => {
           that Elixir is not popular, because that stops me from spending too
           much time playing around with it.
         </p>
+
+        <h2>Thoughts</h2>
+        <p>We Work Remotely is North America centric and web centric.</p>
+        <p>Ruby on Rails is not dead.</p>
+        <p>I thought Laravel would be more popular.</p>
+        <p>I expected TypeScript to be more popular than Rust.</p>
+        <p>JavaScript is huge!</p>
         <button className="navigation-button" onClick={props.onClose}>
           go back
         </button>
