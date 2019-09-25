@@ -97,8 +97,8 @@ input {
 }
 
 .about-page article {
-  padding: 10px;
-  background-color: #00cc0020;
+  padding: 20px;
+  background-color: #00cc0010;
   max-width: 800px;
   border: var(--terminal-green) 1px solid;
   word-wrap: anywhere;

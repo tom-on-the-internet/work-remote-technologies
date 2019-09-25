@@ -18,6 +18,14 @@ export default props => {
           <strong>JavaScript (50%)</strong> means that 50% of postings list
           JavaScript somewhere in the post.
         </p>
+        <p>
+          This page is open source. If something looks wrong,
+          {` `}
+          <a href="https://github.com/tom-on-the-internet/work-remote-technologies">
+            contribute
+          </a>
+          .
+        </p>
 
         <h2>How</h2>
         <p>
@@ -39,9 +47,27 @@ export default props => {
           (/(javascript|js|es5|es6|es7|es2015|es2016|es2017|ecmascript)/i), and
           for some it's nearly impossible (/(Go\s+|golang|Golang|GOLANG)/).
         </p>
+        <p>
+          This is React app. I'm not experienced with React, so if it could be
+          better{` `}
+          <a href="https://github.com/tom-on-the-internet/work-remote-technologies">
+            open a PR!
+          </a>
+        </p>
 
         <h2>Why</h2>
-        <p>...</p>
+        <p>
+          I work remotely in a town that doesn't have developer jobs. I love my
+          current job, but I'm aware that if I ever leave this job it will need
+          to be for a remote position. So, I wanted a way of seeing what
+          technologies were in demand.
+        </p>
+        <p>
+          It's good for me to see that React and Ruby are still in demand,
+          because I want to get better at them. It's also good for me to see
+          that Elixir is not popular, because that stops me from spending too
+          much time playing around with it.
+        </p>
         <button className="navigation-button" onClick={props.onClose}>
           go back
         </button>

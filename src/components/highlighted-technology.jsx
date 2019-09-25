@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default props => {
   return (
@@ -8,7 +8,7 @@ export default props => {
           <div>
             No description for this technology.
             {` `}
-            <a href=" https://github.com/tom-on-the-internet/work-remote-technologies/blob/master/src/technology-thoughts.js">
+            <a href="https://github.com/tom-on-the-internet/work-remote-technologies/blob/master/src/technology-thoughts.js">
               Make one!
             </a>
           </div>
