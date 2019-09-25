@@ -4,8 +4,6 @@ export default props => {
   return (
     <div className="about-page">
       <article>
-        <h1>About</h1>
-
         <h2>What</h2>
         <p>
           This page shows the most popular technologies from the{" "}
