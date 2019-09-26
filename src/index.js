@@ -12,14 +12,11 @@ import convertDataToLocations from "./utilities/convert-data-to-locations";
 import convertDataToTechnologies from "./utilities/convert-data-to-technologies";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      locations: convertDataToLocations(technologyData),
-      highlightedTechnology: "JavaScript",
-      showAboutPage: false
-    };
-  }
+  state = {
+    locations: convertDataToLocations(technologyData),
+    highlightedTechnology: "JavaScript",
+    showAboutPage: false
+  };
 
   onClickCheckbox = locationName => {
     const locations = [...this.state.locations];
@@ -66,7 +63,11 @@ class App extends React.Component {
 
     const aboutPage = <AboutPage onClose={this.onCloseAboutPage} />;
 
-    return <div>{this.state.showAboutPage ? aboutPage : techStuff}</div>;
+    return (
+      <React.Fragment>
+        {this.state.showAboutPage ? aboutPage : techStuff}
+      </React.Fragment>
+    );
   }
 }
 
