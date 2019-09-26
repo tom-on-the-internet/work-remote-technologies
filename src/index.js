@@ -15,9 +15,10 @@ const App = () => {
   const [locations, setLocations] = useState(
     convertDataToLocations(technologyData)
   );
+  const technologies = convertDataToTechnologies(technologyData, locations);
   const [showAboutPage, setShowAboutPage] = useState(false);
   const [highlightedTechnology, setHighlightedTechnology] = useState(
-    "JavaScript"
+    technologies[0].name
   );
 
   const onClickCheckbox = locationName => {
@@ -33,8 +34,6 @@ const App = () => {
     setHighlightedTechnology(technologyName);
 
   const onCloseAboutPage = () => setShowAboutPage(false);
-
-  const technologies = convertDataToTechnologies(technologyData, locations);
 
   const techStuff = (
     <React.Fragment>
