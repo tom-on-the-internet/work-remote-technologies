@@ -21,7 +21,7 @@ class App extends React.Component {
     };
   }
 
-  onClickCheckbox(locationName) {
+  onClickCheckbox = locationName => {
     const locations = [...this.state.locations];
     const locationToUpdate = locations.find(
       ({ name }) => name === locationName
@@ -29,15 +29,12 @@ class App extends React.Component {
     locationToUpdate.on = !locationToUpdate.on;
 
     this.setState({ locations });
-  }
+  };
 
-  onClickTechnology(technologyName) {
+  onClickTechnology = technologyName =>
     this.setState({ highlightedTechnology: technologyName });
-  }
 
-  onCloseAboutPage() {
-    this.setState({ showAboutPage: false });
-  }
+  onCloseAboutPage = () => this.setState({ showAboutPage: false });
 
   render() {
     const technologies = convertDataToTechnologies(
@@ -56,18 +53,18 @@ class App extends React.Component {
         </button>
         <LocationDisplay
           locations={this.state.locations}
-          onChange={this.onClickCheckbox.bind(this)}
+          onChange={this.onClickCheckbox}
         />
         <TechnologyDisplay
           technologies={technologies}
           highlightedTechnology={this.state.highlightedTechnology}
-          onClick={this.onClickTechnology.bind(this)}
+          onClick={this.onClickTechnology}
         />
         <Footer />
       </React.Fragment>
     );
 
-    const aboutPage = <AboutPage onClose={this.onCloseAboutPage.bind(this)} />;
+    const aboutPage = <AboutPage onClose={this.onCloseAboutPage} />;
 
     return <div>{this.state.showAboutPage ? aboutPage : techStuff}</div>;
   }

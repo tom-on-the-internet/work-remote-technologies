@@ -4,6 +4,9 @@ export default props => {
   return (
     <div className="about-page">
       <article>
+        <button className="navigation-button" onClick={props.onClose}>
+          go back
+        </button>
         <h2>What</h2>
         <p>
           This page shows the most popular technologies from the{" "}
