@@ -1,6 +1,6 @@
 import "./index.css";
 
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import AboutPage from "./components/about-page";
@@ -11,64 +11,55 @@ import technologyData from "./technologies.json";
 import convertDataToLocations from "./utilities/convert-data-to-locations";
 import convertDataToTechnologies from "./utilities/convert-data-to-technologies";
 
-class App extends React.Component {
-  state = {
-    locations: convertDataToLocations(technologyData),
-    highlightedTechnology: "JavaScript",
-    showAboutPage: false
-  };
+const App = () => {
+  const [locations, setLocations] = useState(
+    convertDataToLocations(technologyData)
+  );
+  const [showAboutPage, setShowAboutPage] = useState(false);
+  const [highlightedTechnology, setHighlightedTechnology] = useState(
+    "JavaScript"
+  );
 
-  onClickCheckbox = locationName => {
-    const locations = [...this.state.locations];
+  const onClickCheckbox = locationName => {
     const locationToUpdate = locations.find(
       ({ name }) => name === locationName
     );
     locationToUpdate.on = !locationToUpdate.on;
 
-    this.setState({ locations });
+    setLocations(locations);
   };
 
-  onClickTechnology = technologyName =>
-    this.setState({ highlightedTechnology: technologyName });
+  const onClickTechnology = technologyName =>
+    setHighlightedTechnology(technologyName);
 
-  onCloseAboutPage = () => this.setState({ showAboutPage: false });
+  const onCloseAboutPage = () => setShowAboutPage(false);
 
-  render() {
-    const technologies = convertDataToTechnologies(
-      technologyData,
-      this.state.locations
-    );
+  const technologies = convertDataToTechnologies(technologyData, locations);
 
-    const techStuff = (
-      <React.Fragment>
-        <h1>Technologies from We Work Remotely</h1>
-        <button
-          className="navigation-button"
-          onClick={() => this.setState({ showAboutPage: true })}
-        >
-          About This Page
-        </button>
-        <LocationDisplay
-          locations={this.state.locations}
-          onChange={this.onClickCheckbox}
-        />
-        <TechnologyDisplay
-          technologies={technologies}
-          highlightedTechnology={this.state.highlightedTechnology}
-          onClick={this.onClickTechnology}
-        />
-        <Footer />
-      </React.Fragment>
-    );
+  const techStuff = (
+    <React.Fragment>
+      <h1>Technologies from We Work Remotely</h1>
+      <button
+        className="navigation-button"
+        onClick={() => setShowAboutPage(true)}
+      >
+        About This Page
+      </button>
+      <LocationDisplay locations={locations} onChange={onClickCheckbox} />
+      <TechnologyDisplay
+        technologies={technologies}
+        highlightedTechnology={highlightedTechnology}
+        onClick={onClickTechnology}
+      />
+      <Footer />
+    </React.Fragment>
+  );
 
-    const aboutPage = <AboutPage onClose={this.onCloseAboutPage} />;
+  const aboutPage = <AboutPage onClose={onCloseAboutPage} />;
 
-    return (
-      <React.Fragment>
-        {this.state.showAboutPage ? aboutPage : techStuff}
-      </React.Fragment>
-    );
-  }
-}
+  return (
+    <React.Fragment>{showAboutPage ? aboutPage : techStuff}</React.Fragment>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import technologyThoughts from '../technology-thoughts';
-import HighlightedTechnology from './highlighted-technology';
+import technologyThoughts from "../technology-thoughts";
+import HighlightedTechnology from "./highlighted-technology";
 
 export default props => {
   return (
