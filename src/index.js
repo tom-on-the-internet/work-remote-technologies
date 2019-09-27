@@ -1,15 +1,15 @@
-import "./index.css";
+import './index.css';
 
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 
-import AboutPage from "./components/about-page";
-import Footer from "./components/footer";
-import LocationDisplay from "./components/location-display";
-import TechnologyDisplay from "./components/technology-display";
-import technologyData from "./technologies.json";
-import convertDataToLocations from "./utilities/convert-data-to-locations";
-import convertDataToTechnologies from "./utilities/convert-data-to-technologies";
+import AboutPage from './components/about-page';
+import Footer from './components/footer';
+import LocationDisplay from './components/location-display';
+import TechnologyDisplay from './components/technology-display';
+import technologyData from './technologies.json';
+import convertDataToLocations from './utilities/convert-data-to-locations';
+import convertDataToTechnologies from './utilities/convert-data-to-technologies';
 
 const App = () => {
   const [locations, setLocations] = useState(
