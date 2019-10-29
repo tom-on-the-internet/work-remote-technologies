@@ -1,4 +1,3 @@
-
 The app lists the most popular technologies from the **programming** category of [We Work Remotely](https://weworkremotely.com/categories/remote-programming-jobs/).
 
 It's a React app.
