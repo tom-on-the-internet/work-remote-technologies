@@ -18,7 +18,7 @@ const App = () => {
   const technologies = convertDataToTechnologies(technologyData, locations);
   const [showAboutPage, setShowAboutPage] = useState(false);
   const [highlightedTechnology, setHighlightedTechnology] = useState(
-    technologies[0].name
+    technologies.length ? technologies[0].name : ''
   );
 
   const onClickLocationCheckbox = locationName => {
